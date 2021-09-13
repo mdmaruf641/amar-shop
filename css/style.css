@@ -16,7 +16,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   /* border: 1px solid black; */
   text-align: center;
-  width: 100%;
+  width: 90%;
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -24,11 +24,19 @@ body {
 .single-product {
   padding: 10px;
   transition: 0.6s;
+  border: 1px solid cyan;
+  border-radius: 10px;
+  margin: 10px 10px;
+  height: 451px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
-  border-radius: 10px;
-  border: 1px solid cyan;
+  
+  
 }
 .product-image {
   width: 150px;

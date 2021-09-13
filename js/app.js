@@ -11,18 +11,23 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
-      <div>
-    <img class="product-image" src=${product.image}></img>
+      <div class="card h-100">
+        <div><img src=${product.image} height="150px" class="mt-3 w-50 mx-auto"></div>
+        <div class="card-body">
+          <h5 class="card-title">${product.title.slice(0, 35)}</h5>
+          <p>Category: ${product.category}</p>
+          <div class="d-flex justify-content-around   align-items-center">
+            <h5 class="text-success">Reating: ${product.rating.rate}</h5>
+            <h5 class="text-primary">Order: ${product.rating.count}</h5>
+          </div>
+          <h2>Price: $ ${product.price}</h2>
+        </div>
+        <div class="card-footer">
+            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now me-3 btn btn-primary">add to cart</button>
+            <button id="details-btn" class="btn btn-danger">Details</button>
+        </div>
       </div>
-      <h4>${product.title}</h4>
-      <p>Category: ${product.category}</p>
-      <div class="d-flex justify-content-around align-items-center">
-      <h5 class="text-success">Reating: ${product.rating.rate}</h5>
-      <h5 class="text-primary">Order: ${product.rating.count}</h5>
-      </div>
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+    </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
